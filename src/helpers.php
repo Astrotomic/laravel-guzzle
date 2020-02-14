@@ -3,7 +3,7 @@
 use GuzzleHttp\ClientInterface as GuzzleClientContract;
 use Psr\Http\Message\UriInterface;
 
-if (!function_exists('guzzle')) {
+if (! function_exists('guzzle')) {
     /**
      * @param string|UriInterface $baseUri
      * @param array $config

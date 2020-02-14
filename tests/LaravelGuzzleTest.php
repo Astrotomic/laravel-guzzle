@@ -3,11 +3,11 @@
 namespace Astrotomic\LaravelGuzzle\Tests;
 
 use Astrotomic\LaravelGuzzle\Facades\Guzzle;
+use Astrotomic\LaravelGuzzle\LaravelGuzzleServiceProvider;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface as GuzzleClientContract;
 use GuzzleHttp\RequestOptions;
 use Orchestra\Testbench\TestCase;
-use Astrotomic\LaravelGuzzle\LaravelGuzzleServiceProvider;
 
 final class LaravelGuzzleTest extends TestCase
 {

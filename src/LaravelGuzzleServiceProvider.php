@@ -13,14 +13,14 @@ class LaravelGuzzleServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/config.php' => config_path('guzzle.php'),
+                __DIR__.'/../config/config.php' => config_path('guzzle.php'),
             ], 'config');
         }
     }
 
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'guzzle');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'guzzle');
 
         $this->app->bind(
             GuzzleClientContract::class,
