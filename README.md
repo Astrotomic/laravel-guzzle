@@ -4,6 +4,10 @@
 [![MIT License](https://img.shields.io/github/license/Astrotomic/laravel-guzzle.svg?label=License&color=blue&style=for-the-badge)](https://github.com/Astrotomic/laravel-guzzle/blob/master/LICENSE)
 [![Offset Earth](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-green?style=for-the-badge)](https://offset.earth/treeware)
 
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Astrotomic/laravel-guzzle/run-tests?style=flat-square&logoColor=white&logo=github&label=Tests)](https://github.com/Astrotomic/laravel-guzzle/actions?query=workflow%3Arun-tests)
+[![StyleCI](https://styleci.io/repos/240394430/shield)](https://styleci.io/repos/240394430)
+[![Total Downloads](https://img.shields.io/packagist/dt/astrotomic/laravel-guzzle.svg?label=Downloads&style=flat-square)](https://packagist.org/packages/astrotomic/laravel-guzzle)
+
 This is a simple wrapper for Laravel around `guzzlehttp/guzzle`. It provides container bindings and a little helper function.
 The idea was born by reading [Always set a timeout for Guzzle requests inside a queued job](https://divinglaravel.com/always-set-a-timeout-for-guzzle-requests-inside-a-queued-job) by [@themsaid](https://twitter.com/themsaid).
 Why limit it to the queue? ATt the end the problem applies to **every** curl request.
