@@ -1,0 +1,56 @@
+{
+    "name": "astrotomic/laravel-guzzle",
+    "description": "Laravel wrapper for guzzlehttp/guzzle",
+    "keywords": [
+        "astrotomic",
+        "laravel-guzzle"
+    ],
+    "homepage": "https://github.com/astrotomic/laravel-guzzle",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tom Witkowski",
+            "email": "dev.gummibeer@gmail.com",
+            "homepage": "https://gummibeer.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.5",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Astrotomic\\LaravelGuzzle\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Astrotomic\\LaravelGuzzle\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Astrotomic\\LaravelGuzzle\\LaravelGuzzleServiceProvider"
+            ]
+        }
+    }
+}
