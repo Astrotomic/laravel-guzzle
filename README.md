@@ -10,7 +10,7 @@
 
 This is a simple wrapper for Laravel around `guzzlehttp/guzzle`. It provides container bindings and a little helper function.
 The idea was born by reading [Always set a timeout for Guzzle requests inside a queued job](https://divinglaravel.com/always-set-a-timeout-for-guzzle-requests-inside-a-queued-job) by [@themsaid](https://twitter.com/themsaid).
-Why limit it to the queue? ATt the end the problem applies to **every** curl request.
+Why limit it to the queue? At the end the problem applies to **every** curl request.
 That's why this package comes with a default config which is applied to every guzzle instance build by this package.
 
 ## Installation
