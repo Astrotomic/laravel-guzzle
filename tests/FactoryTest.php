@@ -9,6 +9,7 @@ use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Contracts\Container\Container;
 use InvalidArgumentException;
+use Psr\Http\Message\ResponseInterface;
 
 final class FactoryTest extends TestCase
 {
@@ -125,5 +126,13 @@ final class FactoryTest extends TestCase
         $guzzle2 = Guzzle::client();
 
         static::assertSame($guzzle1, $guzzle2);
+    }
+
+    /** @test */
+    public function it_can_call_guzzle_methods_on_default_client(): void
+    {
+        $response = Guzzle::get('https://astrotomic.info');
+
+        static::assertInstanceOf(ResponseInterface::class, $response);
     }
 }
