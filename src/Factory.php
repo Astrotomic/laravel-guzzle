@@ -4,7 +4,6 @@ namespace Astrotomic\LaravelGuzzle;
 
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Support\Manager;
-use Illuminate\Support\Str;
 use InvalidArgumentException;
 
 class Factory extends Manager

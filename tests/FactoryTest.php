@@ -43,7 +43,7 @@ final class FactoryTest extends TestCase
             RequestOptions::TIMEOUT => 3,
         ]);
 
-        Guzzle::extend('astrotomic', static function(Container $app, ?array $config): GuzzleClient {
+        Guzzle::extend('astrotomic', static function (Container $app, ?array $config): GuzzleClient {
             return new GuzzleClient(array_merge([
                 'base_uri' => 'https://astrotomic.info',
             ], $config));

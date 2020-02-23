@@ -2,8 +2,6 @@
 
 namespace Astrotomic\LaravelGuzzle\Tests;
 
-use Astrotomic\LaravelGuzzle\Facades\Guzzle;
-use Astrotomic\LaravelGuzzle\Factory as GuzzleFactory;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface as GuzzleClientContract;
 use GuzzleHttp\RequestOptions;

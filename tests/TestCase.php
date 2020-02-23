@@ -11,5 +11,4 @@ abstract class TestCase extends OrchestraTestCase
     {
         return [GuzzleServiceProvider::class];
     }
-
 }
