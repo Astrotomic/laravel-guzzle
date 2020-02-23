@@ -14,6 +14,7 @@ use Psr\Http\Message\UriInterface;
 
 /**
  * @see GuzzleFactory
+ * @method static GuzzleClient make($baseUri = null, array $config = [])
  * @method static GuzzleClient client(?string $driver = null)
  * @method static GuzzleFactory extend(string $driver, Closure $callback)
  * @method static GuzzleFactory register(string $identifier, array $config)

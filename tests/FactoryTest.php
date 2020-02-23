@@ -55,6 +55,9 @@ final class FactoryTest extends TestCase
         static::assertInstanceOf(Uri::class, $guzzle->getConfig('base_uri'));
         static::assertSame('https://astrotomic.info', (string) $guzzle->getConfig('base_uri'));
         static::assertSame(3, $guzzle->getConfig(RequestOptions::TIMEOUT));
+        static::assertSame(1, $guzzle->getConfig(RequestOptions::CONNECT_TIMEOUT));
+        static::assertTrue($guzzle->getConfig(RequestOptions::HTTP_ERRORS));
+        static::assertTrue($guzzle->getConfig(RequestOptions::ALLOW_REDIRECTS));
     }
 
     /** @test */
@@ -74,6 +77,9 @@ final class FactoryTest extends TestCase
         static::assertInstanceOf(Uri::class, $guzzle->getConfig('base_uri'));
         static::assertSame('https://astrotomic.info', (string) $guzzle->getConfig('base_uri'));
         static::assertSame(8, $guzzle->getConfig(RequestOptions::TIMEOUT));
+        static::assertSame(1, $guzzle->getConfig(RequestOptions::CONNECT_TIMEOUT));
+        static::assertTrue($guzzle->getConfig(RequestOptions::HTTP_ERRORS));
+        static::assertTrue($guzzle->getConfig(RequestOptions::ALLOW_REDIRECTS));
     }
 
     /** @test */
@@ -82,5 +88,33 @@ final class FactoryTest extends TestCase
         static::expectException(InvalidArgumentException::class);
 
         Guzzle::client('astrotomic');
+    }
+
+    /** @test */
+    public function it_can_make_a_new_default_configured_client(): void
+    {
+        $guzzle = Guzzle::make();
+
+        static::assertInstanceOf(GuzzleClient::class, $guzzle);
+        static::assertSame(5, $guzzle->getConfig(RequestOptions::TIMEOUT));
+        static::assertSame(1, $guzzle->getConfig(RequestOptions::CONNECT_TIMEOUT));
+        static::assertTrue($guzzle->getConfig(RequestOptions::HTTP_ERRORS));
+        static::assertTrue($guzzle->getConfig(RequestOptions::ALLOW_REDIRECTS));
+    }
+
+    /** @test */
+    public function it_can_make_a_new_custom_client(): void
+    {
+        $guzzle = Guzzle::make('https://github.com', [
+            RequestOptions::TIMEOUT => 6,
+        ]);
+
+        static::assertInstanceOf(GuzzleClient::class, $guzzle);
+        static::assertInstanceOf(Uri::class, $guzzle->getConfig('base_uri'));
+        static::assertSame('https://github.com', (string) $guzzle->getConfig('base_uri'));
+        static::assertSame(6, $guzzle->getConfig(RequestOptions::TIMEOUT));
+        static::assertSame(1, $guzzle->getConfig(RequestOptions::CONNECT_TIMEOUT));
+        static::assertTrue($guzzle->getConfig(RequestOptions::HTTP_ERRORS));
+        static::assertTrue($guzzle->getConfig(RequestOptions::ALLOW_REDIRECTS));
     }
 }
