@@ -117,4 +117,13 @@ final class FactoryTest extends TestCase
         static::assertTrue($guzzle->getConfig(RequestOptions::HTTP_ERRORS));
         static::assertTrue($guzzle->getConfig(RequestOptions::ALLOW_REDIRECTS));
     }
+
+    /** @test */
+    public function it_binds_clients_as_singleton(): void
+    {
+        $guzzle1 = Guzzle::client();
+        $guzzle2 = Guzzle::client();
+
+        static::assertSame($guzzle1, $guzzle2);
+    }
 }
