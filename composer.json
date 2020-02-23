@@ -3,7 +3,11 @@
     "description": "Laravel wrapper for guzzlehttp/guzzle",
     "keywords": [
         "astrotomic",
-        "laravel-guzzle"
+        "laravel-guzzle",
+        "guzzle",
+        "guzzlehttp",
+        "http",
+        "http-client"
     ],
     "homepage": "https://github.com/astrotomic/laravel-guzzle",
     "license": "MIT",
@@ -49,7 +53,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Astrotomic\\LaravelGuzzle\\LaravelGuzzleServiceProvider"
+                "Astrotomic\\LaravelGuzzle\\GuzzleServiceProvider"
             ]
         }
     }

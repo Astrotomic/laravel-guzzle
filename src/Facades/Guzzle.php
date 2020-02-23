@@ -2,6 +2,8 @@
 
 namespace Astrotomic\LaravelGuzzle\Facades;
 
+use Astrotomic\LaravelGuzzle\Factory as GuzzleFactory;
+use Closure;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface as GuzzleClientContract;
 use GuzzleHttp\Promise\PromiseInterface;
@@ -11,6 +13,12 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 
 /**
+ * @see GuzzleFactory
+ * @method static GuzzleClient client(?string $driver = null)
+ * @method static GuzzleFactory extend(string $driver, Closure $callback)
+ * @method static GuzzleFactory register(string $identifier, array $config)
+ * @method static array getDrivers()
+ *
  * @see GuzzleClientContract
  * @method static ResponseInterface send(RequestInterface $request, array $options = [])
  * @method static PromiseInterface sendAsync(RequestInterface $request, array $options = [])
@@ -35,6 +43,6 @@ class Guzzle extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return GuzzleClientContract::class;
+        return GuzzleFactory::class;
     }
 }

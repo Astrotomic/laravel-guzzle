@@ -1,21 +1,16 @@
 <?php
 
-use GuzzleHttp\ClientInterface as GuzzleClientContract;
-use Psr\Http\Message\UriInterface;
+use Astrotomic\LaravelGuzzle\Facades\Guzzle;
+use GuzzleHttp\Client as GuzzleClient;
 
 if (! function_exists('guzzle')) {
     /**
-     * @param string|UriInterface $baseUri
-     * @param array $config
+     * @param string|null $identifier
      *
-     * @return GuzzleClientContract
+     * @return GuzzleClient
      */
-    function guzzle($baseUri = null, array $config = []): GuzzleClientContract
+    function guzzle(?string $identifier = null): GuzzleClient
     {
-        if ($baseUri !== null) {
-            $config['base_uri'] = $baseUri;
-        }
-
-        return app(GuzzleClientContract::class, $config);
+        return Guzzle::client($identifier);
     }
 }
