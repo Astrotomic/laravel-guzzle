@@ -7,7 +7,7 @@ use GuzzleHttp\ClientInterface as GuzzleClientContract;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
-class LaravelGuzzleServiceProvider extends ServiceProvider
+class GuzzleServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
@@ -22,16 +22,15 @@ class LaravelGuzzleServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'guzzle');
 
+        $this->app->singleton(Factory::class);
+
         $this->app->bind(
-            GuzzleClientContract::class,
-            static function (Container $app, array $config): GuzzleClientContract {
-                return new GuzzleClient(array_merge(
-                    $app->make('config')->get('guzzle.default_config', []),
-                    $config
-                ));
+            GuzzleClient::class,
+            static function (Container $app): GuzzleClient {
+                return $app->make(Factory::class)->client();
             }
         );
 
-        $this->app->alias(GuzzleClientContract::class, GuzzleClient::class);
+        $this->app->alias(GuzzleClient::class, GuzzleClientContract::class);
     }
 }

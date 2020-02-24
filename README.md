@@ -29,38 +29,67 @@ php artisan vendor:publish --provider="Astrotomic\LaravelGuzzle\LaravelGuzzleSer
 
 ## Usage
 
-### Helper
-
-You can use the helper function to create a new instance of `GuzzleHttp\Client`. The helper function has two optional arguments. The `base_uri` and a `config` array. Both are merged with the default config defined in the package config file.
+The core of this package is the `\Astrotomic\LaravelGuzzle\Factory` which can handle multiple guzzle clients.
+There's also a facade that forwards calls to the factory.
 
 ```php
-$guzzle = guzzle('https://example.com', [
-    RequestOptions::CONNECT_TIMEOUT => 3,
-]);
+use Astrotomic\LaravelGuzzle\Facades\Guzzle;
+use Psr\Http\Message\ResponseInterface;
+
+/** @var ResponseInterface $response */
+$response = Guzzle::client('jsonplaceholder')->get('posts/1');
+$response->getStatusCode(); // 200
 ```
 
-### Injection
+### Default Client
 
-Because this package binds the guzzle client with the container you can use injection. The only downside is that you aren't able to set a `base_uri` this way.
+By default the `default_client` config refers to a `default` client.
+The `clients` config key holds all client specific configs.
+For all possible request options please refer to the [official guzzle docs](http://docs.guzzlephp.org/en/stable/request-options.html).
+
+### new Clients
+
+There are multiple ways to register a new client - the easiest would be to simply add a new config to the `clients` config key.
+This will also be the most common for users using the package in a Laravel app.
+
+#### Register config
+
+If you want to configure your clients from within a service provider you can use the `\Astrotomic\LaravelGuzzle\Factory::register()` method.
+The registered config will be merged with an optional app config.
+This will also come in handy for package developers who want to allow the fin al user to customize the guzzle config.
 
 ```php
-class MyClass 
+use Astrotomic\LaravelGuzzle\Facades\Guzzle;
+use Illuminate\Support\ServiceProvider;
+use GuzzleHttp\RequestOptions;
+
+class HttpServiceProvider extends ServiceProvider
 {
-    public function __construct(\GuzzleHttp\ClientInterface $guzzle)
+    public function boot(): void
     {
-        $this->guzzle = $guzzle;
+        Guzzle::register('jsonplaceholder', [
+            'base_uri' => 'https://jsonplaceholder.typicode.com',
+            RequestOptions::TIMEOUT => 3,
+        ]);
     }
 }
 ```
 
-### Make
+#### Register Creator
 
-For sure you can also make a client via any app container.
+If you have the need to create a real `GuzzleHttp\Client` instance yourself you can do so and assign it to an identifier.
+This way you can also use a custom client class - the only requirement is that it extends the basic `GuzzleHttp\Client` class.
 
 ```php
-$guzzle = app(\GuzzleHttp\ClientInterface::class, [
-    'base_uri' => 'https://example.com',
-]);
+use Astrotomic\LaravelGuzzle\Facades\Guzzle;
+use GuzzleHttp\Client;
+use Illuminate\Contracts\Container\Container;
+
+Guzzle::extend('astrotomic', static function (Container $app, ?array $config): Client {
+    return new Client(array_merge([
+        'base_uri' => 'https://astrotomic.info',
+    ], $config));
+});
 ```
 
 ### Testing
