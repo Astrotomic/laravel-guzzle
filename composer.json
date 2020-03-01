@@ -55,7 +55,7 @@
     },
     "support": {
         "email": "dev@astrotomic.info",
-        "issues": "https://github.com/Astrotomic/laravel-linfo/issues",
-        "source": "https://github.com/Astrotomic/laravel-linfo"
+        "issues": "https://github.com/Astrotomic/laravel-guzzle/issues",
+        "source": "https://github.com/Astrotomic/laravel-guzzle"
     }
 }
