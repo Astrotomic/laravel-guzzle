@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-guzzle` will be documented in this file
 
+## 2.1.0 - 2020-03-03
+
+- added Laravel 7 support
+
 ## 2.0.0 - 2020-02-24
 
 - [upgrade guide](https://github.com/Astrotomic/laravel-guzzle/pull/2#issue-378649298)
