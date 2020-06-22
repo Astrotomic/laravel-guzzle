@@ -1,5 +1,3 @@
-
-
 # Laravel Guzzle HTTP
 
 [![Latest Version](http://img.shields.io/packagist/v/astrotomic/laravel-guzzle.svg?label=Release&style=for-the-badge)](https://packagist.org/packages/astrotomic/laravel-guzzle)
