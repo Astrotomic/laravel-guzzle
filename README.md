@@ -94,7 +94,7 @@ Guzzle::extend('astrotomic', static function (Container $app, ?array $config): C
 
 ### Testing
 
-``` bash
+```bash
 composer test
 ```
 
