@@ -12,7 +12,7 @@ All notable changes to `laravel-guzzle` will be documented in this file
 - added `default_client` and `clients` config keys
 - added `\Astrotomic\LaravelGuzzle\Factory` as new core of the package
 - changed `\Astrotomic\LaravelGuzzle\Facades\Guzzle` to pipe calls to the new factory
-- dropped `guzzle()` helper function 
+- dropped `guzzle()` helper function
 - renamed service-provider from `LaravelGuzzleServiceProvider` to `GuzzleServiceProvider`
 
 ## 1.0.1 - 2020-02-17

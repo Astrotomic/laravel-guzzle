@@ -2,7 +2,8 @@
 
 [![Latest Version](http://img.shields.io/packagist/v/astrotomic/laravel-guzzle.svg?label=Release&style=for-the-badge)](https://packagist.org/packages/astrotomic/laravel-guzzle)
 [![MIT License](https://img.shields.io/github/license/Astrotomic/laravel-guzzle.svg?label=License&color=blue&style=for-the-badge)](https://github.com/Astrotomic/laravel-guzzle/blob/master/LICENSE)
-[![Offset Earth](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-green?style=for-the-badge)](https://offset.earth/treeware)
+[![Offset Earth](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-green?style=for-the-badge)](https://plant.treeware.earth/Astrotomic/laravel-guzzle)
+[![Larabelles](https://img.shields.io/badge/Larabelles-%F0%9F%A6%84-lightpink?style=for-the-badge)](https://www.larabelles.com/)
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Astrotomic/laravel-guzzle/run-tests?style=flat-square&logoColor=white&logo=github&label=Tests)](https://github.com/Astrotomic/laravel-guzzle/actions?query=workflow%3Arun-tests)
 [![StyleCI](https://styleci.io/repos/240394430/shield)](https://styleci.io/repos/240394430)
@@ -94,7 +95,7 @@ Guzzle::extend('astrotomic', static function (Container $app, ?array $config): C
 
 ### Testing
 
-``` bash
+```bash
 composer test
 ```
 
@@ -104,11 +105,11 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/Astrotomic/.github/blob/master/CONTRIBUTING.md) for details. You could also be interested in [CODE OF CONDUCT](https://github.com/Astrotomic/.github/blob/master/CODE_OF_CONDUCT.md).
 
 ### Security
 
-If you discover any security related issues, please email dev.gummibeer@gmail.com instead of using the issue tracker.
+If you discover any security related issues, please check [SECURITY](https://github.com/Astrotomic/.github/blob/master/SECURITY.md) for steps to report it.
 
 ## Credits
 
@@ -125,8 +126,6 @@ You're free to use this package, but if it makes it to your production environme
 
 It’s now common knowledge that one of the best tools to tackle the climate crisis and keep our temperatures from rising above 1.5C is to [plant trees](https://www.bbc.co.uk/news/science-environment-48870920). If you contribute to my forest you’ll be creating employment for local families and restoring wildlife habitats.
 
-You can buy trees at https://offset.earth/treeware
+You can buy trees at [offset.earth/treeware](https://plant.treeware.earth/Astrotomic/laravel-guzzle)
 
-Read more about Treeware at https://treeware.earth
-
-[![We offset our carbon footprint via Offset Earth](https://toolkit.offset.earth/carbonpositiveworkforce/badge/5e186e68516eb60018c5172b?black=true&landscape=true)](https://offset.earth/treeware)
+Read more about Treeware at [treeware.earth](https://treeware.earth)
