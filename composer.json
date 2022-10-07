@@ -1,7 +1,8 @@
 {
     "name": "astrotomic/laravel-guzzle",
-    "type": "library",
     "description": "Laravel wrapper for guzzlehttp/guzzle",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "astrotomic",
         "laravel-guzzle",
@@ -10,8 +11,6 @@
         "http",
         "http-client"
     ],
-    "homepage": "https://astrotomic.info",
-    "license": "MIT",
     "authors": [
         {
             "name": "Tom Witkowski",
@@ -20,24 +19,20 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://astrotomic.info",
+    "support": {
+        "email": "dev@astrotomic.info",
+        "issues": "https://github.com/Astrotomic/laravel-guzzle/issues",
+        "source": "https://github.com/Astrotomic/laravel-guzzle"
+    },
     "require": {
         "php": "^7.2 || ^8.0",
         "guzzlehttp/guzzle": "^6.3 || ^7.0",
-        "illuminate/support": "^6.0 || ^7.0 || ^8.0|| ^9.0"
+        "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^4.0 || ^5.0 || ^6.0",
+        "orchestra/testbench": "^4.0 || ^5.0 || ^6.0 || ^7.0",
         "phpunit/phpunit": "^8.0 || ^9.0"
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Astrotomic\\LaravelGuzzle\\GuzzleServiceProvider"
-            ]
-        }
     },
     "autoload": {
         "psr-4": {
@@ -49,13 +44,18 @@
             "Astrotomic\\LaravelGuzzle\\Tests\\": "tests"
         }
     },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Astrotomic\\LaravelGuzzle\\GuzzleServiceProvider"
+            ]
+        }
+    },
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-    },
-    "support": {
-        "email": "dev@astrotomic.info",
-        "issues": "https://github.com/Astrotomic/laravel-guzzle/issues",
-        "source": "https://github.com/Astrotomic/laravel-guzzle"
     }
 }
