@@ -17,9 +17,8 @@ class Factory extends Manager
     protected $registeredConfigs = [];
 
     /**
-     * @param string|UriInterface|null $baseUri
-     * @param array $config
-     *
+     * @param  string|UriInterface|null  $baseUri
+     * @param  array  $config
      * @return GuzzleClient
      */
     public function make($baseUri = null, array $config = []): GuzzleClient

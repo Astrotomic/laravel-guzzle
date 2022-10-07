@@ -14,6 +14,7 @@ use Psr\Http\Message\UriInterface;
 
 /**
  * @see GuzzleFactory
+ *
  * @method static GuzzleClient make($baseUri = null, array $config = [])
  * @method static GuzzleClient client(?string $driver = null)
  * @method static GuzzleFactory extend(string $driver, Closure $callback)
@@ -21,12 +22,14 @@ use Psr\Http\Message\UriInterface;
  * @method static array getDrivers()
  *
  * @see GuzzleClientContract
+ *
  * @method static ResponseInterface send(RequestInterface $request, array $options = [])
  * @method static PromiseInterface sendAsync(RequestInterface $request, array $options = [])
  * @method static ResponseInterface request(string $method, string|UriInterface $uri, array $options = [])
  * @method static PromiseInterface requestAsync(string $method, string|UriInterface $uri, array $options = [])
  *
  * @see GuzzleClient
+ *
  * @method static ResponseInterface get(string|UriInterface $uri, array $options = [])
  * @method static ResponseInterface head(string|UriInterface $uri, array $options = [])
  * @method static ResponseInterface put(string|UriInterface $uri, array $options = [])
